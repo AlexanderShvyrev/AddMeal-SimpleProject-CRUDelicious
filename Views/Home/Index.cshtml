@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Dish>
+<div class="jumbotron">
+    <h1>Welcome to CRUDelicious!!!</h1>
+    <h3>Check out some recent dishes!</h3>
+    <hr>
+    @foreach(Dish dsh in Model)
+    {
+        <h3><a href="/@dsh.DishId">@dsh.Name</a></h3> //asp-action="show" asp-route-dishId="@dsh.DishId"
+    <ul>
+        <li>By: @dsh.Chef</li>
+        <li>Last Updated: @dsh.UpdatedAt.ToShortDateString() || @dsh.UpdatedAt.ToShortTimeString()</li>
+    </ul>
+    }
+    
+</div>

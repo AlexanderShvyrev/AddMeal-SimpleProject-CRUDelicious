@@ -1,0 +1,16 @@
+@model Dish
+
+    <div class="jumbotron">
+        <h2>@Model.Name</h2>
+        <hr>
+        <h3>@Model.Chef</h3>
+        <ul>
+            <li>Tastiness points: @Model.Tastiness</li>
+            <li>Calories: @Model.Calories</li>
+            <li>Description: @Model.Description</li>
+            
+        </ul>
+
+        <a href="delete/@Model.DishId" class="btn btn-danger">Delete</a>  <a asp-action="Edit" asp-route-DishId="@Model.DishId"  class="btn btn-warning">Edit</a>
+        
+    </div>
